@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plank-Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        #calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .day {
+            padding: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .day.completed {
+            background-color: #76c7c0;
+        }
+
+        .day.today {
+            font-weight: bold;
+            border: 2px solid #76c7c0;
+        }
+
+        #stats {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        #countdown {
+            margin-top: 20px;
+        }
+
+        #startPlank {
+            background-color: #76c7c0;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #startPlank:hover {
+            background-color: #5aa8a1;
+        }
+
+        #timer {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plank-Tracker</h1>
+        <div id="countdown">
+            <button id="startPlank">Start Plank</button>
+            <p id="timer">00:00</p>
+        </div>
+        <div id="calendar"></div>
+        <div id="stats">
+            <h2>Statistik</h2>
+            <p id="completedDays">Abgeschlossene Tage: 0</p>
+            <p id="streak">Längste Serie: 0 Tage</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
