@@ -123,12 +123,7 @@ function startPlankTimer() {
 }
 
 function markTodayAsCompleted() {
-    const today = new Date().toISOString().split('T')[0];
-    const dayElement = document.querySelector(`[data-date="${today}"]`);
+    const today = new Date();
+    const todayDate = today.toISOString().split('T')[0];
+    const dayElement = document.querySelector(`[data-date="${todayDate}"]`);
     if (dayElement) {
-        const data = getPlankData();
-        data[today] = true;
-        savePlankData(data);
-        dayElement.classList.add('completed');
-    }
-}
